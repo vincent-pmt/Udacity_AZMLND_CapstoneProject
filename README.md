@@ -55,7 +55,7 @@ The best performing model trained by AutoML was VotingEnsemble with Accuracy 0.8
 
 #### the best model trained with it's parameters
 
-![AutoML Best Model](/images/AutoML_bestmodel.jpeg)
+![AutoML Best Model](images/AutoML_bestmodel.jpeg)
 
 ![Submit Experience](/images/Experience_Submit.jpeg)
 
@@ -67,7 +67,6 @@ The best performing model trained by AutoML was VotingEnsemble with Accuracy 0.8
 ![Register Model](/images/AutoML_RegisterModel.jpeg)
 
 ![Experience Best Model](/images/Experience_BestModel.jpeg)
-
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
@@ -95,13 +94,19 @@ The best performing model trained by AutoML was VotingEnsemble with Accuracy 0.8
 
 ![Deploy Best Model](/images/AutoML_DeployBestModel.jpeg)
 
+#### Endpoint Details 
+
 ![AutoML Model Endpoint](/images/AutoML_BestModel_Endpoint.jpeg)
+
+#### Endpoint Status 
 
 ![Endpoint Status](/images/Endpoint_Status.jpeg)
 
+#### Service Log 
+
 ![Service Log](/images/Service_Log.jpeg)
 
-#### query the endpoint with a sample input.
+#### 'TESTING' query the endpoint with a sample input.
 
 ![Endpoint URI](/images/Endpoint_URI_Code.jpeg)
 
