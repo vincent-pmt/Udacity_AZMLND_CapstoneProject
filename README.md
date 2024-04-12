@@ -1,6 +1,6 @@
-# Your Project Title Here
+# Udacity Capstone Project - Azure ML Engineer - Heart failure prediction
 
-The objective of the project was to utilize Azure's AutoML and Hyperdrive capabilities to train various models, identify the most efficient one, and then deploy it as a web service. The final step involved evaluating the service's endpoints to determine individuals at elevated risk of cardiovascular issues, which could be due to multiple risk factors including hypertension, diabetes, hyperlipidemia, or pre-existing conditions. This approach aimed to streamline the prediction process for high-risk cardiovascular conditions.
+The objective of the project was to utilize Azure's AutoML and Hyperdrive capabilities to train various models, identify the most efficient one, and then deploy it as a web service. The final step involved evaluating the service's endpoints to determine individuals at elevated risk of cardiovascular issues, which could be due to multiple risk factors including high blood pressure, diabetes or pre-existing conditions. This approach aimed to streamline the prediction process for high-risk cardiovascular conditions.
 
 ## Project Set Up and Installation
 The dataset has been downloaded from Kaggle and manually upload to Blogstorrage.
@@ -55,7 +55,7 @@ The best performing model trained by AutoML was VotingEnsemble with Accuracy 0.8
 
 #### the best model trained with it's parameters
 
-![AutoML Best Model](images/AutoML_bestmodel.jpeg)
+![AutoML Best Model](/images/AutoML_bestmodel.jpeg)
 
 ![Submit Experience](/images/Experience_Submit.jpeg)
 
@@ -69,13 +69,22 @@ The best performing model trained by AutoML was VotingEnsemble with Accuracy 0.8
 ![Experience Best Model](/images/Experience_BestModel.jpeg)
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+
+I'm using The Scikit-learn Logistic Regression, Scikit-learn plays a significant role in simplifying the implementation of logistic regression.
+I've opted for a approach with the random selection for its two parameters. This means that the values of the parameters were not predetermined, but randomly. 
+Random sampling is straightforward to implement. No complex algorithms or heuristics are needed. It’s a good starting point for hyperparameter tuning, especially when little prior knowledge about the problem exists.
 
 ![Hyperparameter Configuration](/images/Hyper_config.jpeg)
 
+ Random parameters:
+ - --C - Inverse of regularization strength (default: 1.0)
+ - --max_iter - Maximum number of iterations convergence (default: 100)
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+
+The accuracy of the best model given by HyperDrive is 0.8 with 
+    Regularization Strength: 5
+    Max iterations: 200
 
 #### the screenshots of the RunDetails widget
 
@@ -89,8 +98,18 @@ The best performing model trained by AutoML was VotingEnsemble with Accuracy 0.8
 
 ![Hyperparameter Best Model with Parameters](/images/Hyper_BestModel_Para.jpeg)
 
+#### Improvement:
+
+- Training a new model by using a dataset with more data.
+- Try with more Parameter Sampling
+- try different classification methods like SVMs and trees
+- Optimise on the training set and use the test set as an object evaluation of the method
+
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+The accuracy scores are close, with the autoML pipeline (accuracy: 0.88638) outperforming the scikit-learn pipeline (accuracy: 0.8) by 0.086 points.
+
+So I deploy the best model from AutoML experiment and using Azure Container Instance.
 
 ![Deploy Best Model](/images/AutoML_DeployBestModel.jpeg)
 
@@ -108,15 +127,26 @@ The best performing model trained by AutoML was VotingEnsemble with Accuracy 0.8
 
 #### 'TESTING' query the endpoint with a sample input.
 
+In order to perform a prediction, we need to get the Rest endpoint and the authentication key if it's required.
+
+Prepare a sample dataset and convert it to JSON format before injecting it into the request for evaluation.
+
 ![Endpoint URI](/images/Endpoint_URI_Code.jpeg)
+
+Should get the result if the input data and header are invalid.
 
 ![Endpoint Request](/images/Endpoint_Request_Result.jpeg)
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+The screencast should demonstrate:
 - A working model
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
 
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+Please click here for viewing. (Please enable the caption on this video)
+
+[![Watch the video](https://i9.ytimg.com/vi_webp/p8kM4h0HFyo/mq3.webp?sqp=CIzT4rAG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGBMgTyh_MA8=&rs=AOn4CLBTCxdvN70H7pj0GBu-nkRcMcAVVA)](https://youtu.be/p8kM4h0HFyo)
+
+## Future work/improvement
+- Increasing the number of clusters used to speed up the analysis. These steps could help to reduce the error in our model and study it more efficiently.
+- Implement a load test for the model's endpoint, such as simulating high traffic to the endpoint and measuring its responsiveness.
