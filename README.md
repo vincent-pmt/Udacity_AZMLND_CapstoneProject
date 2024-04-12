@@ -55,9 +55,9 @@ The best performing model trained by AutoML was VotingEnsemble with Accuracy 0.8
 
 #### the best model trained with it's parameters
 
-![Submit Experience](/images/Experience_Submit.jpeg)
+![AutoML Best Model](/images/AutoML_bestmodel.jpeg)
 
-![AutoML bestmodel](/images/AutoML_bestmodel.jpeg)
+![Submit Experience](/images/Experience_Submit.jpeg)
 
 #### Save the best model 
 
