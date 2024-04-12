@@ -12,19 +12,20 @@ The heart_failure_clinical_records_dataset.cvs was acquired from Kaggle (Dataset
 https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data/data
 
 About the data
-age: Age of the patient
-anaemia: Haemoglobin level of patient (Boolean)
-creatinine_phosphokinase: Level of the CPK enzyme in the blood (mcg/L)
-diabetes: If the patient has diabetes (Boolean)
-ejection_fraction: Percentage of blood leaving the heart at each contraction
-high_blood_pressure: If the patient has hypertension (Boolean)
-platelets: Platelet count of blood (kiloplatelets/mL)
-serum_creatinine: Level of serum creatinine in the blood (mg/dL)
-serum_sodium: Level of serum sodium in the blood (mEq/L)
-sex: Sex of the patient
-smoking: If the patient smokes or not (Boolean)
-time: Follow-up period (days)
-DEATH_EVENT: If the patient deceased during the follow-up period (Boolean)
+
+- age: Age of the patient
+- anaemia: Haemoglobin level of patient (Boolean)
+- creatinine_phosphokinase: Level of the CPK enzyme in the blood (mcg/L)
+- diabetes: If the patient has diabetes (Boolean)
+- ejection_fraction: Percentage of blood leaving the heart at each contraction
+- high_blood_pressure: If the patient has hypertension (Boolean)
+- platelets: Platelet count of blood (kiloplatelets/mL)
+- serum_creatinine: Level of serum creatinine in the blood (mg/dL)
+- serum_sodium: Level of serum sodium in the blood (mEq/L)
+- sex: Sex of the patient
+- smoking: If the patient smokes or not (Boolean)
+- time: Follow-up period (days)
+- DEATH_EVENT: If the patient deceased during the follow-up period (Boolean)
 
 ### Task
 The task is to determine whether a patient passed away during the follow-up period. For this purpose, we will utilize the 'DEATH_EVENT' column as our target variable. Given that 'DEATH_EVENT' is a boolean variable, indicating only two possible outcomes, our analysis falls under the category of Binary Classification. 
