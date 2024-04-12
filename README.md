@@ -36,10 +36,10 @@ Open the Azure AI | Machine Learning Studio, navigate to the 'Data' section and 
 
 ## Automated ML
 ### An overview of the `automl` settings and configuration
-the compute target that we provisioned is set with compute_target=cluster, and the number of max_concurrent_iterations of your experiment should be matched to the number of nodes in the cluster.
-
+Create a cluster instance
 ![Cluster](/images/cluster.jpeg)
 
+the compute target that we provisioned is set with compute_target=cluster, and the number of max_concurrent_iterations of your experiment should be matched to the number of nodes in the cluster.
 The argument task is set to classification since we are dealing with a binary classification and we also need to set label_column_name="DEATH_EVENT" in order to predicting DEATH_EVENT. 
 The dataset should be specified in training_data=dataset.
 set "primary_metric" : 'accuracy' to select the best model by Using accuracy metrix
